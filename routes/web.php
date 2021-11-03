@@ -177,3 +177,14 @@ Route::post('/update/writer/{id}', [RoleController::class, 'UpdateWriter'])->nam
 Route::get('/web/settings', [WebsiteSettingController::class, 'MainWebsetting'])->name('website.setting');
 Route::post('/update/websetting/{id}', [WebsiteSettingController::class, 'UpdateWebSetting'])->name('update.websetting');
 
+
+// Account Setting Routes 
+Route::get('/account/setting', [AdminController::class, 'AccountSetting'])->name('account.setting');
+Route::get('/profile/edit', [AdminController::class, 'ProfileEdit'])->name('profile.edit');
+Route::post('/profile/store', [AdminController::class, 'ProfileStore'])->name('profile.store');
+
+/// Change Password 
+
+Route::get('/show/password', [AdminController::class, 'ShowPassword'])->name('show.password');
+Route::post('/change/password', [AdminController::class, 'ChangePassword'])->name('change.password');
+

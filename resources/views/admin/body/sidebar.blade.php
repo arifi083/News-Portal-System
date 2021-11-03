@@ -1,4 +1,6 @@
-
+@php
+$editData = DB::table('users')->where('id',Auth::user()->id)->first();
+@endphp
 
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
@@ -10,7 +12,7 @@
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="{{ asset('backend/assets/images/faces/face15.jpg') }}" alt="">
+                <img class="img-xs rounded-circle" src="{{ (!empty($editData->profile_photo_path))?url('upload/user_images/'.$editData->profile_photo_path):url('upload/no_image.jpg') }}" alt="">
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
@@ -20,7 +22,7 @@
               </div>
               <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
               <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                <a href="#" class="dropdown-item preview-item">
+                <a href="{{ route('account.setting') }}" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-settings text-primary"></i>
@@ -31,7 +33,7 @@
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
+                <a href="{{ route('show.password') }}" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-onepassword  text-info"></i>

@@ -60,7 +60,7 @@
                        <option disabled="" selected="">--Select Category--</option>
                        @foreach($category as $row)
                             <option value="{{ $row->id }}">{{ $row->category_en }} | {{ $row->category_bn }}</option>
-				       @endforeach
+				               @endforeach
                     
                     </select>
                     @error('category_id') 
@@ -93,12 +93,12 @@
                        <option disabled="" selected="">--Select District--</option>
                        @foreach($district as $row)
                             <option value="{{ $row->id }}">{{ $row->district_en }} | {{ $row->district_bn }}</option>
-				       @endforeach
+				               @endforeach
                     
                     </select>
                     @error('district_id') 
 	                    <span class="text-danger">{{ $message }}</span>
-	                @enderror 
+	                  @enderror 
 
                 </div>
 
@@ -110,7 +110,7 @@
                     </select>
                     @error('subdistrict_id') 
 	                    <span class="text-danger">{{ $message }}</span>
-	                @enderror 
+	                  @enderror 
 
                 </div>
 
@@ -126,7 +126,7 @@
                     
                        @error('image') 
 	                     <span class="text-danger">{{ $message }}</span>
-	                   @enderror 
+	                     @enderror 
                       <img src="" id="mainThmb">
 
                    </div>
@@ -169,7 +169,7 @@
             <h4 class="text-center">Extra Opions </h4>
           <br>
 
-          <div class="row">
+          <div class="row"> 
              <label class="form-check-label col-md-3">
              <input type="checkbox" name="headline" class="form-check-input" value="1"> Headline <i class="input-helper"></i></label>
 

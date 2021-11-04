@@ -32,29 +32,32 @@
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Category</h4>
+                    <h4 class="card-title">Update Website</h4>
 
-                <form class="forms-sample" method="POST" action="{{ route('category.store') }}">
+                <form class="forms-sample" method="POST" action="{{ route('update.website',$website->id) }}">
                      @csrf
 
+                     <div class="form-group">
+                         <label for="exampleInputUsername1">Website Name</label>
+                         <input type="text" class="form-control" name="website_name" value="{{ $website->website_name }}" placeholder="Website Name"  id="exampleInputEmail1">
+                          @error('website_name') 
+	                         <span class="text-danger">{{ $message }}</span>
+	                      @enderror
+                      </div>
+
+
                       <div class="form-group">
-                        <label for="exampleInputUsername1">Categogry English</label>
-                        <input type="text" class="form-control" name="category_en" placeholder="Category English"  id="exampleInputEmail1">
-                        @error('category_en') 
+                        <label for="exampleInputEmail1">Website Link</label>
+                        <input type="text" name="website_link" value="{{ $website->website_link }}"  class="form-control" id="exampleInputEmail1" placeholder="Website Link">
+                        @error('website_link') 
 	                        <span class="text-danger">{{ $message }}</span>
 	                      @enderror
                       </div>
-                      
 
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Categogry Bangla</label>
-                        <input type="text" name="category_bn" class="form-control" id="exampleInputEmail1" placeholder="Category Bangla">
-                        @error('category_bn') 
-	                        <span class="text-danger">{{ $message }}</span>
-	                    @enderror
-                      </div>
+                     
+                     
                       
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button type="submit" class="btn btn-primary mr-2">Update</button>
                       
                 </form>
                   </div>

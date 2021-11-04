@@ -85,9 +85,7 @@
 				</div>
 				<!-- ********* -->
                 <br><br>
-        @php
-$reletedNews = DB::table('posts')->where('category_id',$post->category_id)->orderBy('id','desc')->limit(6)->get();
-        @endphp
+    
 				<div class="row">
 					<div class="col-md-12"><h2 class="heading">
                        @if(session()->get('language') == 'bangla') 
@@ -104,9 +102,9 @@ $reletedNews = DB::table('posts')->where('category_id',$post->category_id)->orde
 							<a href="#"><img src="{{ asset($row->image) }}" alt="Notebook"></a>
 					<h4 class="heading-02"><a href="{{ url('view/post/'.$row->id) }}">
                               @if(session()->get('language') == 'bangla') 
-						        {{ $post->title_bn }}
+						        {{ $row->title_bn }}
 				             @else 
-						        {{ $post->title_en }}
+						        {{ $row->title_en }}
 				             @endif
                             </a> </h4>
 						</div>

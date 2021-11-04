@@ -67,7 +67,7 @@
                                    <option value="0" >Small Photo</option>
 			                     </select>
       
-		                </div>
+		                  </div>
 
 
                     

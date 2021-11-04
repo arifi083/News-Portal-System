@@ -11,7 +11,7 @@
 			<div class="row">
 				<div class="col-md-9 col-sm-8">
 					<div class="row">
-						<div class="col-md-1 col-sm-1 col-lg-1"></div>
+						<div class="col-md-1 col-sm-1 col-lg-1"></div> 
 						<div class="col-md-10 col-sm-10">
 							<div class="lead-news">
 	 <div class="service-img"><a href="#"><img src="{{ asset($firstsectionbig->image) }}" width="800px" alt="Notebook"></a></div>

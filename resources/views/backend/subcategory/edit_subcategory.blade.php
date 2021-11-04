@@ -42,7 +42,7 @@
                         <input type="text" class="form-control" name="subcategory_en" value="{{ $subcategory->subcategory_en }}" placeholder="Subcategory English"  id="exampleInputEmail1">
                         @error('subcategory_en') 
 	                        <span class="text-danger">{{ $message }}</span>
-	                    @enderror
+	                      @enderror
                       </div>
                       
 

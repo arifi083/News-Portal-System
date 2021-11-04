@@ -31,9 +31,11 @@ class IndexController extends Controller
         ->select('posts.*','categories.category_en','categories.category_bn','subcategories.subcategory_en','subcategories.subcategory_bn','users.name')
         ->where('posts.id',$id)->first();
         //dd($post);
-        return view('frontend.single_post',compact('post'));
+        $category_id = $post->category_id;
+        $reletedNews = DB::table('posts')->where('category_id',$category_id)->where('id','!=',$id)->orderBy('id','desc')->limit(6)->get();
+        return view('frontend.single_post',compact('post','reletedNews'));
 
-    }//end method
+    }//end  
 
     public function CategoywisePost($id,$category_en){
         $catpost = DB::table('posts')->where('category_id',$id)->orderBy('id','desc')->paginate(5);
@@ -56,4 +58,4 @@ class IndexController extends Controller
     }
 
 
-}
+} 

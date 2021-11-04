@@ -40,7 +40,7 @@
   <a href="{{ route('add.writer')  }}"><button type="button" class="btn btn-primary btn-fw" style="float: right;">Add Writer</button></a>	              	
               </div>
                     
-      
+       
                     <div class="table-responsive">
                       <table class="table table-bordered">
                         <thead>

@@ -64,7 +64,7 @@
 
                                @foreach($district as $row)
                                    <option value="{{ $row->id }}">{{ $row->district_en }} | {{ $row->district_bn }}</option>
-				                @endforeach
+				                       @endforeach
 
 			                     </select>
 

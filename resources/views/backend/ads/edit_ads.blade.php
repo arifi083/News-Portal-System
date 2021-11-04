@@ -1,6 +1,6 @@
 @extends('admin.admin_master')
 @section('admin')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 
 <div class="content-wrapper">
@@ -32,21 +32,21 @@
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Ads</h4>
+                    <h4 class="card-title">Update Ads</h4>
 
-                <form class="forms-sample" method="POST" action="{{ route('ads.store') }}" enctype="multipart/form-data">
+                <form class="forms-sample" method="POST" action="{{ route('update.ads',$ads->id) }}"  enctype="multipart/form-data">
                      @csrf
 
-                      <div class="form-group">
+                     <div class="form-group">
                         <label for="exampleInputUsername1">Ads Link</label>
-                        <input type="text" class="form-control" name="link" placeholder="ads link"  id="exampleInputEmail1">
+                        <input type="text" class="form-control" name="link" value="{{ $ads->link}}" id="exampleInputEmail1">
                         @error('link') 
 	                        <span class="text-danger">{{ $message }}</span>
 	                    @enderror
                       </div>
-                      
-                       
-                      <div class="form-group">
+
+                      <div class="row">
+                       <div class="form-group col-md-6">
                          <label for="exampleFormControlFile1">Image Upload</label>
                          <div class="controls">
                              <input type="file" name="adds" class="form-control" onChange="mainThamUrl(this)" required=""> 
@@ -59,25 +59,31 @@
 
                         </div> 
 
-                        
-                      <div class="form-group">
-                         <label for="exampleFormControlSelect2">Ads Type</label>
-			                   <select name="type"  class="form-control">
-                                   <option value="1" >Horizontal Ads</option>
-                                   <option value="2" >Vertical Ads</option>
-			                     </select>
-      
-		                </div>
+                       <div class="form-group col-md-6">
+                         <label for="exampleInputName1">Old Ads</label>
+                         <img src="{{ URL::to($ads->adds) }}" style="width: 70px; height: 50px;">
+                         <input type="hidden" name="oldads" value="{{ $ads->adds }}">
+                       
+                        </div>
+                     
+                    </div>
 
 
-                    
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Ads Type</label>
+			                <select name="type"  class="form-control">
+                                <option value="1" >Horizontal Ads</option>
+                                <option value="2" >Vertical Ads</option>
+			                 </select>
+		            </div>
+
+                
+                      <button type="submit" class="btn btn-primary mr-2">Update</button>
                       
                 </form>
                   </div>
                 </div>
               </div>
-
 
 
 
@@ -93,6 +99,7 @@
 	}	
     
 </script>
+
 
 
 @endsection

@@ -82,7 +82,7 @@
                        <option disabled="" selected="">--Select SubCategory--</option>
                        @foreach($subcategory as $row)
                             <option value="{{ $row->id }}" {{ $row->id == $post->subcategory_id ? 'selected': ''}}>{{ $row->subcategory_en }}</option>
-				        @endforeach
+				               @endforeach
 
                      
                     </select>

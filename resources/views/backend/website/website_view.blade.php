@@ -62,8 +62,8 @@
         <td>{{ $row->website_link }} </td>
         <td> 
     
-           <a href="{{ route('district.edit',$row->id) }}" class="btn btn-primary">Edit</a>
-           <a href="{{ route('district.delete',$row->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
+           <a href="{{ route('website.edit',$row->id) }}" class="btn btn-primary">Edit</a>
+           <a href="{{ route('website.delete',$row->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
       </tr>
       @endforeach
                            

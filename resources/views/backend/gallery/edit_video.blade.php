@@ -32,29 +32,39 @@
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Category</h4>
+                    <h4 class="card-title">Update photo</h4>
 
-                <form class="forms-sample" method="POST" action="{{ route('category.store') }}">
+                <form class="forms-sample" method="POST" action="{{ route('update.video',$video->id) }}">
                      @csrf
 
-                      <div class="form-group">
-                        <label for="exampleInputUsername1">Categogry English</label>
-                        <input type="text" class="form-control" name="category_en" placeholder="Category English"  id="exampleInputEmail1">
-                        @error('category_en') 
+                     <div class="form-group">
+                        <label for="exampleInputUsername1">Video Title</label>
+                        <input type="text" class="form-control" name="title" value="{{ $video->title }}" id="exampleInputEmail1">
+                        @error('title') 
 	                        <span class="text-danger">{{ $message }}</span>
 	                      @enderror
                       </div>
-                      
 
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Categogry Bangla</label>
-                        <input type="text" name="category_bn" class="form-control" id="exampleInputEmail1" placeholder="Category Bangla">
-                        @error('category_bn') 
-	                        <span class="text-danger">{{ $message }}</span>
-	                    @enderror
+                          <label for="exampleInputName1">Embed Code</label>
+                          <input type="text" class="form-control" name="embed_code"  value="{{ $video->embed_code }}" id="exampleInputName1">
+                           @error('embed_code') 
+	                          <span class="text-danger">{{ $message }}</span>
+	                         @enderror
                       </div>
-                      
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+
+
+                      <div class="form-group">
+                         <label for="exampleFormControlSelect2">Video Type</label>
+			                   <select name="type"  class="form-control">
+                                  <option value="1" >Big Video</option>
+                                   <option value="0" >Small Video</option>
+			                    </select>
+      
+		                 </div>
+
+                
+                      <button type="submit" class="btn btn-primary mr-2">Update</button>
                       
                 </form>
                   </div>

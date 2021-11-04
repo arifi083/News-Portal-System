@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-
+ 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
@@ -98,9 +98,10 @@ class PostController extends Controller
     public function PostEdit($id){
         $post =DB::table('posts')->where('id',$id)->first();
         $category =DB::table('categories')->get();
+        $subcategory =DB::table('subcategories')->get();
         $district =DB::table('district')->get();
         $subdistrict =DB::table('subdistricts')->get();
-        return view('backend.post.post_edit',compact('post','category','district','subdistrict'));
+        return view('backend.post.post_edit',compact('post','category','subcategory','district','subdistrict'));
     }
 
 
@@ -137,7 +138,7 @@ class PostController extends Controller
   	 		$notification = array(
     	 	'message' => 'Post Updated Successfully',
     	 	'alert-type' => 'success'
-    	 );
+    	   );
 
     	 return Redirect()->route('all.post')->with($notification);
   	 	

@@ -129,17 +129,27 @@ Route::get('/notice/deactive/{id}', [SettingController::class, 'DeActiveNoticeSe
 Route::get('/website/setting', [SettingController::class, 'WebsiteSetting'])->name('all.website');
 Route::get('/add/website', [SettingController::class, 'AddWebsite'])->name('add.website');
 Route::post('/store/website', [SettingController::class, 'StoreWebsite'])->name('website.store');
+Route::get('/website/edit/{id}', [SettingController::class, 'WebsiteEdit'])->name('website.edit');
+Route::post('/update/website/{id}', [SettingController::class, 'WebsiteUpdate'])->name('update.website');
+Route::get('website/delete/{id}', [SettingController::class, 'WebsiteDelete'])->name('website.delete'); 
+
 
 
 //photo gallery
 Route::get('/photo/gallery', [GalleryController::class, 'PhotoGallery'])->name('photo.gallery');
 Route::get('/add/photo', [GalleryController::class, 'AddPhoto'])->name('add.photo');
 Route::post('/photo/store', [GalleryController::class, 'PhotoStore'])->name('photo.store');
+Route::get('/photo/edit/{id}', [GalleryController::class, 'PhotoEdit'])->name('photo.edit');
+Route::post('/update/photo/{id}', [GalleryController::class, 'Updatephoto'])->name('update.photo');
+Route::get('/photo/delete/{id}', [GalleryController::class, 'PhotoDelete'])->name('photo.delete'); 
 
 
 Route::get('/video/gallery', [GalleryController::class, 'VideoGallery'])->name('video.gallery');
 Route::get('/add/video', [GalleryController::class, 'AddVideo'])->name('add.video');
 Route::post('/video/store', [GalleryController::class, 'VideoStore'])->name('video.store');
+Route::get('/video/edit/{id}', [GalleryController::class, 'VideoEdit'])->name('video.edit');
+Route::post('/update/video/{id}', [GalleryController::class, 'UpdateVideo'])->name('update.video');
+Route::get('/video/delete/{id}', [GalleryController::class, 'VideoDelete'])->name('video.delete'); 
 
 
 //Multi language route
@@ -164,6 +174,8 @@ Route::get('/search/district', [IndexController::class, 'SearchDistrict'])->name
 Route::get('/ads/list', [AdsController::class, 'AdsList'])->name('ads.list');
 Route::get('/add/ads', [AdsController::class, 'AddAds'])->name('ads.add');
 Route::post('/ads/store', [AdsController::class, 'AdsStore'])->name('ads.store');
+Route::get('/ads/edit/{id}', [AdsController::class, 'AdsEdit'])->name('ads.edit');
+Route::post('/update/ads/{id}', [AdsController::class, 'UpdateAds'])->name('update.ads');
 
 //user role
 Route::get('/add/writer', [RoleController::class, 'AddWriter'])->name('add.writer');

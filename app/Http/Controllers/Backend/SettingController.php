@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use DB;
+use DB; 
 
 class SettingController extends Controller
 {
@@ -215,7 +215,7 @@ class SettingController extends Controller
     }
 
 
-    public function StoreWebsite(Request $request){
+    public function StoreWebsite(Request $request){ 
 
 
         $data = array();
@@ -231,6 +231,42 @@ class SettingController extends Controller
         return Redirect()->route('all.website')->with($notification);
 
     } //end method
+
+
+    public function WebsiteEdit($id){
+        $website = DB::table('websites')->where('id',$id)->first();
+        return view('backend.website.edit_website',compact('website'));
+    }
+
+
+    public function WebsiteUpdate(Request $request,$id){ 
+
+
+        $data = array();
+        $data['website_name'] = $request->website_name;
+        $data['website_link'] = $request->website_link;
+        DB::table('websites')->where('id',$id)->update($data);
+
+        $notification = array(
+            'message' => 'Website Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return Redirect()->route('all.website')->with($notification);
+
+    } //end method
+
+
+    public function WebsiteDelete($id){
+        DB::table('websites')->where('id',$id)->delete();
+        $notification = array(
+            'message' => 'Website Delete Successfully',
+            'alert-type' => 'error'
+        );
+
+        return redirect()->route('all.website')->with($notification);
+
+    }
 
 
 

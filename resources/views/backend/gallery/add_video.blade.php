@@ -42,7 +42,7 @@
                         <input type="text" class="form-control" name="title" placeholder="video Title"  id="exampleInputEmail1">
                         @error('title') 
 	                        <span class="text-danger">{{ $message }}</span>
-	                    @enderror
+	                      @enderror
                       </div>
                       
                       <div class="form-group">
@@ -50,7 +50,7 @@
                           <input type="text" class="form-control" name="embed_code" placeholder="embed code"  id="exampleInputName1">
                            @error('embed_code') 
 	                          <span class="text-danger">{{ $message }}</span>
-	                       @enderror
+	                         @enderror
                       </div>
                        
                     
@@ -59,11 +59,11 @@
                       <div class="form-group">
                          <label for="exampleFormControlSelect2">Video Type</label>
 			                   <select name="type"  class="form-control">
-                                   <option value="1" >Big Video</option>
-                                   <option value="0" >Small Video</option>
-			                     </select>
+                            <option value="1" >Big Video</option>
+                            <option value="0" >Small Video</option>
+			                    </select>
       
-		                </div>
+		                 </div>
                     
                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
                       
@@ -75,18 +75,7 @@
 
 
 
-<script type="text/javascript">
-	function mainThamUrl(input){
-		if (input.files && input.files[0]) {
-			var reader = new FileReader();
-			reader.onload = function(e){
-				$('#mainThmb').attr('src',e.target.result).width(80).height(80);
-			};
-			reader.readAsDataURL(input.files[0]);
-		}
-	}	
-    
-</script>
+
 
 
 @endsection

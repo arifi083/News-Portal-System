@@ -80,7 +80,7 @@
   </div>
    
 
-  <div class="col-md-6">
+  <div class="col-md-6"> 
     <div class="form-group">
       <div class="form-check form-check-primary">
          <label class="form-check-label">

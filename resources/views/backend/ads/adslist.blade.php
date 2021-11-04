@@ -69,7 +69,7 @@
         </td>
         <td> 
     
-           <a href="{{ route('category.edit',$row->id) }}" class="btn btn-primary">Edit</a>
+           <a href="{{ route('ads.edit',$row->id) }}" class="btn btn-primary">Edit</a>
            <a href="{{ route('category.delete',$row->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
       </tr>
       @endforeach
